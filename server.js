@@ -24,13 +24,13 @@ const sess = {
 
 app.use(session({secret: 'Super secret secret'}, sess));
 
-const helpers = require('./utils/helpers');
+// const helpers = require('./utils/helpers');
 
-const hbs = exphbs.create({ helpers });
+// const hbs = exphbs.create({ helpers });
 
 // handlebars engine 
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
+// app.engine('handlebars', engine);
+// app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
