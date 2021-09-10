@@ -31,7 +31,11 @@ router.get('/', (req, res) => {
         // console.log(dbPostData[0]);
         const posts = dbPostData.map(post => post.get({ plain: true }));
         //  pass a single post object into the homepage template
-        res.render('homepage', { posts });
+        console.log('hit home route');
+        res.render('homepage', {
+          posts,
+          loggedIn: req.session.loggedIn
+        });
     })
     .catch(err => {
         console.log(err);
@@ -41,6 +45,7 @@ router.get('/', (req, res) => {
 
 // route form login
 router.get('/login', (req, res) => {
+ 
     if (req.session.loggedIn) {
         res.redirect('/');
         return;
@@ -48,23 +53,24 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-router.get('/', (req, res) => {
-    // res.render('homepage', {
-    //     id: 1,
-    //     post_url: 'https://handlebarsjs.com/guide/',
-    //     title: 'Handlebars Docs',
-    //     created_at: new Date(),
-    //     vote_count: 10,
-    //     comments: [{}, {}],
-    //     user: {
-    //         username: 'test_user'
-    //     }
-    // })
-    res.render('homepage', {
-      posts,
-      loggedIn: req.session.loggedIn
-    });
-});
+// router.get('/', (req, res) => {
+//     // res.render('homepage', {
+//     //     id: 1,
+//     //     post_url: 'https://handlebarsjs.com/guide/',
+//     //     title: 'Handlebars Docs',
+//     //     created_at: new Date(),
+//     //     vote_count: 10,
+//     //     comments: [{}, {}],
+//     //     user: {
+//     //         username: 'test_user'
+//     //     }
+//     // })
+//     console.log('hit home route');
+//     res.render('homepage', {
+//       posts,
+//       loggedIn: req.session.loggedIn
+//     });
+// });
 
 // Single post
 router.get('/post/:id', (req, res) => {
