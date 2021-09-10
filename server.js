@@ -13,16 +13,16 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 // const mySecret = process.env.DB_Secret;
 
 const sess = {
-  sercet: 'Super secret secret',
+  secret: 'Super secret secret',
   cookie: {},
-  resave: true,
+  resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
     db: sequelize
   })
 };
 
-app.use(session({secret: 'Super secret secret'}, sess));
+app.use(session(sess));
 
 const helpers = require('./utils/helpers');
 
