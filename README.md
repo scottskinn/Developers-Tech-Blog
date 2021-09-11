@@ -19,6 +19,7 @@
 
   ## Installation:
       page is on heruko
+      https://shrouded-escarpment-46174.herokuapp.com/
 
   ## Usage:
       pics
