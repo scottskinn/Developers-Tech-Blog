@@ -18,14 +18,8 @@
     SO THAT I can publish articles, blog posts, and my thoughts and opinions
 
   ## Installation:
-      page is on heruko
-      https://shrouded-escarpment-46174.herokuapp.com/
-
-  ## Usage:
-      pics
-
-  ## Contributing:
-      me     
+      Page is deployed from heruko
+      https://shrouded-escarpment-46174.herokuapp.com/   
 
   ## Questions:
   You can reach me here:
